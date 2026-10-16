@@ -4,7 +4,8 @@
 [![Curriculum Vitae](https://img.shields.io/badge/CURRICULUM_VITAE-PDF-ffb800?style=for-the-badge)](https://jacintocarbone.github.io/CV_Jacinto_Carbone.pdf)
 [![UTEC Mechatronics](https://img.shields.io/badge/UTEC-Mechatronics_Engineering-10b981?style=for-the-badge)](https://utec.edu.uy)
 
-> **"Where Low-Level Software Meets Physical Hardware."**  
+> *"People who are really serious about software should make their own hardware."* — **Alan Kay**  
+>
 > Estudiante de **Tecnología en Mecatrónica en UTEC (Uruguay)**. Especializado en la integración de sistemas mecánicos, electricidad de planta, modelado CAD 3D y desarrollo de software en **C (AVR Bare-Metal), Assembly, Python y Kotlin**.
 
 ---
