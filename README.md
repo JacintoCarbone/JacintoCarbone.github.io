@@ -7,7 +7,7 @@
 
 > *"People who are really serious about software should make their own hardware."* — **Alan Kay**  
 >
-> Estudiante de **Tecnología en Mecatrónica en UTEC (Uruguay)**. Especializado en la integración de sistemas mecánicos, electricidad de planta, modelado CAD 3D y desarrollo de software en **C (AVR Bare-Metal), Assembly, Python y Kotlin**.
+> Estudiante de **Tecnología en Mecatrónica en UTEC (Uruguay)**. Especializado en la integración de sistemas mecánicos, diseño de PCB, modelado CAD 3D en **Autodesk Inventor** y desarrollo de software en **C (AVR Bare-Metal), Assembly, Python y Kotlin**.
 
 ---
 
@@ -17,7 +17,8 @@
 | :--- | :--- |
 | **Embedded & Low-Level** | `C (C99 / avr-gcc)` / `Assembly` / `ATmega328P / Arduino` / `ISR Ring Buffers` / `Hardware Timers (CTC/PWM)` / `UART / I2C / SPI` |
 | **Software, Mobile & AI** | `Python 3` / `Kotlin (Jetpack Compose / Room SQLite)` / `Computer Vision (IA)` / `Resilient Web Scraping` / `Git` / `Linux` |
-| **Mecatrónica & Planta** | `Modelado CAD 3D (STEP/STL)` / `Impresión 3D / Manufactura Aditiva` / `Planos Técnicos & Eléctricos` / `Sensores & Actuadores` / `EHS` |
+| **Mecatrónica, PCB & CAD** | `Autodesk Inventor (CAD 3D)` / `Diseño de PCB` / `Impresión 3D / Manufactura Aditiva` / `Planos Técnicos & Eléctricos` / `Sensores & Motores` |
+| **Idiomas** | `Español (Nativo)` / `Inglés B2 Certificado (Cambridge B2 First - FCE)` |
 
 ---
 
