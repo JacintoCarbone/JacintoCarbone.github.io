@@ -2,6 +2,7 @@
 
 [![Live Portfolio](https://img.shields.io/badge/LIVE_PORTFOLIO-jacintocarbone.github.io-00f0ff?style=for-the-badge)](https://jacintocarbone.github.io)
 [![Curriculum Vitae](https://img.shields.io/badge/CURRICULUM_VITAE-PDF-ffb800?style=for-the-badge)](https://jacintocarbone.github.io/CV_Jacinto_Carbone.pdf)
+[![LinkedIn](https://img.shields.io/badge/LINKEDIN-Jacinto_Carbone-0A66C2?style=for-the-badge)](https://www.linkedin.com/in/jacinto-carbone-castro-09795a346/)
 [![UTEC Mechatronics](https://img.shields.io/badge/UTEC-Mechatronics_Engineering-10b981?style=for-the-badge)](https://utec.edu.uy)
 
 > *"People who are really serious about software should make their own hardware."* — **Alan Kay**  
