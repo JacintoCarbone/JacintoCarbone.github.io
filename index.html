@@ -549,6 +549,7 @@ Haz clic en un comando debajo para inspeccionar el perfil:</div>
           <span style="font-size: 11px; color: #64748b; margin-right: 4px;">EXEC:</span>
           <button class="cmd-chip mono" onclick="runCmd('status')">status</button>
           <button class="cmd-chip mono" onclick="runCmd('stack')">stack</button>
+          <button class="cmd-chip mono" onclick="runCmd('talos')">talos-erp</button>
           <button class="cmd-chip mono" onclick="runCmd('vision')">vision-ai</button>
           <button class="cmd-chip mono" onclick="runCmd('avr')">avr-os</button>
           <button class="cmd-chip mono" onclick="runCmd('contact')">contact</button>
@@ -594,15 +595,15 @@ Haz clic en un comando debajo para inspeccionar el perfil:</div>
 
         <div class="card">
           <div class="card-icon">🐍</div>
-          <h3 data-es="Python, Automatización & Visión IA" data-en="Python, Automation & Computer Vision">Python, Automatización & Visión IA</h3>
-          <p data-es="Creación de herramientas de software para monitoreo, visión artificial por cámara para reconocimiento óptico de fórmulas químicas, pipelines de extracción de datos (Web Scraping resiliente) e interfaces de control PC-Microcontrolador." data-en="Software tooling for industrial monitoring, camera-based computer vision AI for chemical formula recognition, resilient web scraping data pipelines, and PC-to-MCU serial bridges.">
-            Creación de herramientas de software para monitoreo, visión artificial por cámara para reconocimiento óptico de fórmulas químicas, pipelines de extracción de datos (Web Scraping resiliente) e interfaces de control PC-Microcontrolador.
+          <h3 data-es="Python, Kotlin & Visión IA" data-en="Python, Kotlin & Computer Vision">Python, Kotlin & Visión IA</h3>
+          <p data-es="Desarrollo de aplicaciones ERP móviles en Kotlin (Jetpack Compose + SQLite), visión artificial por cámara para reconocimiento óptico de fórmulas químicas, pipelines de extracción de datos (Web Scraping) e interfaces de control PC-MCU." data-en="Mobile ERP development in Kotlin (Jetpack Compose + SQLite), camera-based computer vision AI for chemical formula recognition, resilient web scraping data pipelines, and PC-to-MCU serial bridges.">
+            Desarrollo de aplicaciones ERP móviles en Kotlin (Jetpack Compose + SQLite), visión artificial por cámara para reconocimiento óptico de fórmulas químicas, pipelines de extracción de datos (Web Scraping) e interfaces de control PC-MCU.
           </p>
           <div class="tag-list mono">
             <span class="tag">Python 3</span>
+            <span class="tag">Kotlin / Compose</span>
             <span class="tag">Computer Vision / IA</span>
-            <span class="tag">Automatización</span>
-            <span class="tag">Web Scraping</span>
+            <span class="tag">Room SQLite</span>
             <span class="tag">Git / GSuite</span>
           </div>
         </div>
@@ -615,7 +616,27 @@ Haz clic en un comando debajo para inspeccionar el perfil:</div>
       <h2 class="section-title" data-es="Proyectos de Ingeniería y Código Real" data-en="Engineering & Real-World Code">Proyectos de Ingeniería y Código Real</h2>
       <div class="grid-2">
 
-        <!-- Project 1 -->
+        <!-- Project 1: Talos -->
+        <div class="card">
+          <div class="pill mono" style="margin-bottom: 12px;">KOTLIN • JETPACK COMPOSE • ROOM SQLITE • ERP</div>
+          <h3 data-es="Talos — ERP Móvil para Manufactura Aditiva e Impresión 3D" data-en="Talos — 3D Printing ERP & Additive Manufacturing Manager">Talos — ERP Móvil para Manufactura Aditiva e Impresión 3D</h3>
+          <p data-es="Aplicación nativa Android desarrollada en Kotlin y Jetpack Compose para administrar negocios y granjas de impresión 3D. Incluye base de datos relacional Room (SQLite) con control de stock de bobinas de filamento en gramos en tiempo real, flujo Kanban de órdenes de producción, cotizador paramétrico de costos (energía, horas máquina, material, margen) y contabilidad de ventas/gastos." data-en="Native Android ERP application built with Kotlin and Jetpack Compose to manage 3D printing farms and businesses. Features a relational Room (SQLite) database tracking filament spools in real-time grams, production order states, parametric cost calculator (machine hours, material weight, margins), and financial ledger.">
+            Aplicación nativa Android desarrollada en Kotlin y Jetpack Compose para administrar negocios y granjas de impresión 3D. Incluye base de datos relacional Room (SQLite) con control de stock de bobinas de filamento en gramos, flujo de órdenes de producción, cotizador paramétrico de costos y balance financiero.
+          </p>
+          <div class="tag-list mono">
+            <span class="tag">Kotlin</span>
+            <span class="tag">Jetpack Compose</span>
+            <span class="tag">Room SQLite</span>
+            <span class="tag">Coroutines & Flow</span>
+            <span class="tag">Impresión 3D / ERP</span>
+          </div>
+          <div class="project-links">
+            <span class="mono" style="font-size: 12px; color: var(--amber);">★ App Completa (+1.700 líneas Kotlin)</span>
+            <a href="https://github.com/JacintoCarbone/talos-3d-print-erp" target="_blank" class="project-link mono">Ver Código en GitHub ↗</a>
+          </div>
+        </div>
+
+        <!-- Project 2: AVR -->
         <div class="card">
           <div class="pill mono" style="margin-bottom: 12px;">C99 BARE-METAL • HARDWARE TIMERS • PYTHON SERIAL</div>
           <h3 data-es="AVR Bare-Metal Micro-OS & Telemetry Bridge" data-en="AVR Bare-Metal Micro-OS & Telemetry Bridge">AVR Bare-Metal Micro-OS & Telemetry Bridge</h3>
@@ -635,7 +656,7 @@ Haz clic en un comando debajo para inspeccionar el perfil:</div>
           </div>
         </div>
 
-        <!-- Project 2 -->
+        <!-- Project 3: Vision AI -->
         <div class="card">
           <div class="pill mono" style="margin-bottom: 12px;">COMPUTER VISION • MACHINE LEARNING • PYTHON</div>
           <h3 data-es="Intérprete Óptico de Fórmulas Químicas con IA" data-en="AI Camera-Based Chemical Formula Interpreter">Intérprete Óptico de Fórmulas Químicas con IA</h3>
@@ -654,7 +675,7 @@ Haz clic en un comando debajo para inspeccionar el perfil:</div>
           </div>
         </div>
 
-        <!-- Project 3 -->
+        <!-- Project 4: Python Harvester -->
         <div class="card">
           <div class="pill mono" style="margin-bottom: 12px;">PYTHON AUTOMATION • DATA PIPELINE • CLI</div>
           <h3 data-es="Enterprise Web Harvester & Data Pipeline" data-en="Enterprise Web Harvester & Data Pipeline">Enterprise Web Harvester & Data Pipeline</h3>
@@ -671,25 +692,6 @@ Haz clic en un comando debajo para inspeccionar el perfil:</div>
           <div class="project-links">
             <span class="mono" style="font-size: 12px; color: var(--emerald);">● 100% Automated Pipeline</span>
             <a href="https://github.com/JacintoCarbone/python-web-harvester" target="_blank" class="project-link mono">Ver Código en GitHub ↗</a>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="card">
-          <div class="pill mono" style="margin-bottom: 12px;">CAD 3D • ELECTROMECÁNICA • HARDWARE</div>
-          <h3 data-es="Modelado Técnico 3D & Integración Electromecánica" data-en="Technical 3D CAD & Electromechanical Integration">Modelado Técnico 3D & Integración Electromecánica</h3>
-          <p data-es="Diseño de piezas mecánicas, carcasas técnicas para PCBs y soportes estructurales contemplando tolerancias reales de fabricación e impresión 3D. Integración con sensores industriales, motores paso a paso/DC y documentación de planos de planta." data-en="Design of mechanical parts, custom PCB enclosures, and structural mounts accounting for manufacturing and 3D printing tolerances. Integrated with sensors, actuators, and technical infrastructure blueprints.">
-            Diseño de piezas mecánicas, carcasas técnicas para PCBs y soportes estructurales contemplando tolerancias reales de fabricación e impresión 3D. Integración con sensores, motores y documentación de esquemas técnicos.
-          </p>
-          <div class="tag-list mono">
-            <span class="tag">Modelado CAD 3D</span>
-            <span class="tag">STEP / STL</span>
-            <span class="tag">Tolerancias Mecánicas</span>
-            <span class="tag">Instrumentación</span>
-          </div>
-          <div class="project-links">
-            <span class="mono" style="font-size: 12px; color: var(--cyan);">◆ Mecatrónica Aplicada</span>
-            <a href="./CV_Jacinto_Carbone.pdf" target="_blank" class="project-link mono">Ver Ficha en CV ↗</a>
           </div>
         </div>
 
@@ -731,7 +733,8 @@ Haz clic en un comando debajo para inspeccionar el perfil:</div>
 
     const outputs = {
       status: `[OK] Candidato  : Jacinto Carbone\n[OK] Carrera    : Tecnología en Mecatrónica (UTEC)\n[OK] Ubicación  : Fray Bentos / Montevideo, UY (Disponible traslado)\n[OK] Filosofía  : Just Get It Done | Never Stop Learning`,
-      stack: `[HARDWARE] C (AVR Bare-Metal), Assembly, Microcontroladores, Sensores, Motores\n[SOFTWARE] Python 3, Visión Artificial (IA), Web Scraping, Git, Linux\n[PLANTA]   Electricidad, Mecánica, Planos CAD 3D, Calibración, EHS`,
+      stack: `[HARDWARE] C (AVR Bare-Metal), Assembly, Microcontroladores, Sensores, Motores\n[SOFTWARE] Python 3, Kotlin (Jetpack Compose/Room), Visión Artificial (IA)\n[PLANTA]   Electricidad, Mecánica, Planos CAD 3D, Impresión 3D, Calibración`,
+      talos: `[PROJECT] Talos — 3D Printing ERP & Production Manager (Android)\n[TECH]    Kotlin + Jetpack Compose + Room SQLite (6 tablas relacionales)\n[REPO]    https://github.com/JacintoCarbone/talos-3d-print-erp`,
       vision: `[PROJECT] Intérprete de Fórmulas Químicas con IA\n[TECH]    Python + Cámara en tiempo real + Reconocimiento Óptico\n[RESULT]  Interpretación automatizada de nomenclatura y estructuras.`,
       avr: `[PROJECT] AVR Bare-Metal Micro-OS (ATmega328P)\n[TECH]    C99 directo a registros, UART ISR Ring Buffer (64B), Timer1 CTC 1ms\n[REPO]    https://github.com/JacintoCarbone/avr-baremetal-micro-os`,
       contact: `[EMAIL]   jacinto.carbone@estudiantes.utec.edu.uy\n[GITHUB]  https://github.com/JacintoCarbone\n[CV PDF]  https://jacintocarbone.github.io/CV_Jacinto_Carbone.pdf`
