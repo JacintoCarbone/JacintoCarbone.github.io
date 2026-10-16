@@ -390,12 +390,15 @@
     }
 
     .card-icon {
-      font-size: 26px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--cyan);
+      letter-spacing: 1px;
       margin-bottom: 14px;
       display: inline-block;
       background: var(--cyan-dim);
-      padding: 10px 14px;
-      border-radius: 8px;
+      padding: 6px 12px;
+      border-radius: 6px;
       border: 1px solid var(--border-subtle);
     }
 
@@ -477,7 +480,7 @@
       <span class="status-dot"></span>
       <span>SYS_STATUS: <strong>OPERATIONAL</strong></span>
       <span style="margin: 0 10px;">|</span>
-      <span>ARCH: <strong>AVR_C99 • ASM • PYTHON_3 • CAD_3D</strong></span>
+      <span>ARCH: <strong>AVR_C99 / ASM / PYTHON_3 / KOTLIN / CAD_3D</strong></span>
     </div>
     <div>
       <span>LOC: <strong>URUGUAY (UTEC MECHATRONICS)</strong></span>
@@ -495,7 +498,7 @@
         <a href="#arsenal" data-es="Especialidades" data-en="Core Pillars">Especialidades</a>
         <a href="#projects" data-es="Proyectos" data-en="Projects">Proyectos</a>
         <a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a>
-        <a href="https://github.com/JacintoCarbone" target="_blank">GitHub ↗</a>
+        <a href="https://github.com/JacintoCarbone" target="_blank" class="mono">GitHub -&gt;</a>
         <button class="lang-btn mono" onclick="toggleLang()" id="langBtn">EN / ES</button>
       </div>
     </div>
@@ -506,21 +509,20 @@
     <div class="hero">
       <div>
         <div class="pill mono">
-          <span>⚡</span>
-          <span data-es="DISPONIBLE PARA ROLES DE INGENIERÍA & DESARROLLO" data-en="AVAILABLE FOR ENGINEERING & DEVELOPMENT ROLES">DISPONIBLE PARA ROLES DE INGENIERÍA & DESARROLLO</span>
+          <span data-es="[STATUS] DISPONIBLE PARA ROLES DE INGENIERÍA & DESARROLLO" data-en="[STATUS] AVAILABLE FOR ENGINEERING & DEVELOPMENT ROLES">[STATUS] DISPONIBLE PARA ROLES DE INGENIERÍA & DESARROLLO</span>
         </div>
         <h1>
           <span data-es="Donde el " data-en="Where ">Donde el </span>
           <span class="gradient-text" data-es="Software de Bajo Nivel" data-en="Low-Level Software">Software de Bajo Nivel</span>
           <span data-es=" toca el Mundo Físico." data-en=" Meets Physical Hardware."> toca el Mundo Físico.</span>
         </h1>
-        <p class="hero-p" data-es="Estudiante de Tecnología en Mecatrónica en UTEC. Integro mecánica, electricidad, modelado CAD 3D y programación en C (AVR), Assembly y Python para construir sistemas de automatización, visión artificial y soluciones de planta bajo la filosofía Just Get It Done." data-en="Mechatronics Engineering student at UTEC. Bridging mechanical systems, electrical infrastructure, 3D CAD modeling, and low-level C (AVR), Assembly & Python to build industrial automation, computer vision, and reliable hardware solutions.">
-          Estudiante de Tecnología en Mecatrónica en UTEC. Integro mecánica, electricidad, modelado CAD 3D y programación en C (AVR), Assembly y Python para construir sistemas de automatización, visión artificial y soluciones de planta bajo la filosofía <em>Just Get It Done</em>.
+        <p class="hero-p" data-es="Estudiante de Tecnología en Mecatrónica en UTEC. Integro mecánica, electricidad, modelado CAD 3D y programación en C (AVR), Assembly, Python y Kotlin para construir sistemas de automatización, visión artificial y soluciones de planta bajo la filosofía Just Get It Done." data-en="Mechatronics Engineering student at UTEC. Bridging mechanical systems, electrical infrastructure, 3D CAD modeling, and low-level C (AVR), Assembly, Python & Kotlin to build industrial automation, computer vision, and reliable hardware solutions.">
+          Estudiante de Tecnología en Mecatrónica en UTEC. Integro mecánica, electricidad, modelado CAD 3D y programación en C (AVR), Assembly, Python y Kotlin para construir sistemas de automatización, visión artificial y soluciones de planta bajo la filosofía <em>Just Get It Done</em>.
         </p>
         <div class="btn-group">
-          <a href="#projects" class="btn btn-primary" data-es="🚀 Ver Proyectos Técnicos" data-en="🚀 View Technical Projects">🚀 Ver Proyectos Técnicos</a>
-          <a href="./CV_Jacinto_Carbone.pdf" target="_blank" class="btn btn-outline" data-es="📄 Descargar CV (PDF)" data-en="📄 Download Resume (PDF)">📄 Descargar CV (PDF)</a>
-          <a href="https://github.com/JacintoCarbone" target="_blank" class="btn btn-outline mono">GitHub @JacintoCarbone</a>
+          <a href="#projects" class="btn btn-primary" data-es="Ver Proyectos Técnicos" data-en="View Technical Projects">Ver Proyectos Técnicos</a>
+          <a href="./CV_Jacinto_Carbone.pdf" target="_blank" class="btn btn-outline mono" data-es="Descargar CV [PDF]" data-en="Download Resume [PDF]">Descargar CV [PDF]</a>
+          <a href="https://github.com/JacintoCarbone" target="_blank" class="btn btn-outline mono">github.com/JacintoCarbone</a>
         </div>
       </div>
 
@@ -537,9 +539,9 @@
         <div class="terminal-body" id="termBody">
           <div class="cmd-out">==========================================
   JACINTO CARBONE // TELEMETRY CONSOLE
-  UTEC Mechatronics | C/AVR • ASM • Python
+  UTEC Mechatronics | C/AVR - ASM - Python
 ==========================================
-Haz clic en un comando debajo para inspeccionar el perfil:</div>
+Selecciona un comando debajo para inspeccionar el perfil:</div>
           <div class="cmd-line">&gt; status</div>
           <div class="cmd-out">[OK] Educación : Tecnología en Mecatrónica (UTEC)
 [OK] Idiomas   : Español (Nativo) | Inglés (Medio-Alto)
@@ -564,7 +566,7 @@ Haz clic en un comando debajo para inspeccionar el perfil:</div>
       <h2 class="section-title" data-es="Ingeniería Multidisciplinaria" data-en="Multidisciplinary Engineering">Ingeniería Multidisciplinaria</h2>
       <div class="grid-3">
         <div class="card">
-          <div class="card-icon">⚙️</div>
+          <div class="card-icon mono">01 // HARDWARE &amp; CAD</div>
           <h3 data-es="Mecatrónica, Planta & CAD 3D" data-en="Mechatronics, Plant & 3D CAD">Mecatrónica, Planta & CAD 3D</h3>
           <p data-es="Sólida base en electricidad y mecánica. Lectura e interpretación de planos de infraestructura, esquemas de instalaciones eléctricas, modelado técnico 3D (STEP/STL), calibración de sensores y soporte a mantenimiento preventivo y correctivo." data-en="Solid foundation in electrical and mechanical systems. Blueprint reading, electrical schematics, 3D technical CAD modeling (STEP/STL), sensor calibration, and preventive/corrective facility maintenance.">
             Sólida base en electricidad y mecánica. Lectura e interpretación de planos de infraestructura, esquemas de instalaciones eléctricas, modelado técnico 3D (STEP/STL), calibración de sensores y soporte a mantenimiento preventivo y correctivo.
@@ -579,7 +581,7 @@ Haz clic en un comando debajo para inspeccionar el perfil:</div>
         </div>
 
         <div class="card">
-          <div class="card-icon">🔌</div>
+          <div class="card-icon mono">02 // BARE-METAL C &amp; ASM</div>
           <h3 data-es="Sistemas Embebidos (C / AVR / ASM)" data-en="Embedded Systems (C / AVR / ASM)">Sistemas Embebidos (C / AVR / ASM)</h3>
           <p data-es="Programación bare-metal a nivel de registros sin capas de abstracción pesadas. Desarrollo de drivers no bloqueantes mediante interrupciones (ISR), buffers circulares UART, timers de precisión por hardware y adquisición ADC." data-en="Register-level bare-metal programming without bloated abstractions. Interrupt-driven (ISR) non-blocking drivers, UART ring buffers, hardware CTC timers, and real-time sensor telemetry.">
             Programación bare-metal a nivel de registros sin capas de abstracción pesadas. Desarrollo de drivers no bloqueantes mediante interrupciones (ISR), buffers circulares UART, timers de precisión por hardware y adquisición ADC.
@@ -594,7 +596,7 @@ Haz clic en un comando debajo para inspeccionar el perfil:</div>
         </div>
 
         <div class="card">
-          <div class="card-icon">🐍</div>
+          <div class="card-icon mono">03 // SOFTWARE &amp; AI</div>
           <h3 data-es="Python, Kotlin & Visión IA" data-en="Python, Kotlin & Computer Vision">Python, Kotlin & Visión IA</h3>
           <p data-es="Desarrollo de aplicaciones ERP móviles en Kotlin (Jetpack Compose + SQLite), visión artificial por cámara para reconocimiento óptico de fórmulas químicas, pipelines de extracción de datos (Web Scraping) e interfaces de control PC-MCU." data-en="Mobile ERP development in Kotlin (Jetpack Compose + SQLite), camera-based computer vision AI for chemical formula recognition, resilient web scraping data pipelines, and PC-to-MCU serial bridges.">
             Desarrollo de aplicaciones ERP móviles en Kotlin (Jetpack Compose + SQLite), visión artificial por cámara para reconocimiento óptico de fórmulas químicas, pipelines de extracción de datos (Web Scraping) e interfaces de control PC-MCU.
@@ -618,7 +620,7 @@ Haz clic en un comando debajo para inspeccionar el perfil:</div>
 
         <!-- Project 1: Talos -->
         <div class="card">
-          <div class="pill mono" style="margin-bottom: 12px;">KOTLIN • JETPACK COMPOSE • ROOM SQLITE • ERP</div>
+          <div class="pill mono" style="margin-bottom: 12px;">KOTLIN / JETPACK COMPOSE / ROOM SQLITE / ERP</div>
           <h3 data-es="Talos — ERP Móvil para Manufactura Aditiva e Impresión 3D" data-en="Talos — 3D Printing ERP & Additive Manufacturing Manager">Talos — ERP Móvil para Manufactura Aditiva e Impresión 3D</h3>
           <p data-es="Aplicación nativa Android desarrollada en Kotlin y Jetpack Compose para administrar negocios y granjas de impresión 3D. Incluye base de datos relacional Room (SQLite) con control de stock de bobinas de filamento en gramos en tiempo real, flujo Kanban de órdenes de producción, cotizador paramétrico de costos (energía, horas máquina, material, margen) y contabilidad de ventas/gastos." data-en="Native Android ERP application built with Kotlin and Jetpack Compose to manage 3D printing farms and businesses. Features a relational Room (SQLite) database tracking filament spools in real-time grams, production order states, parametric cost calculator (machine hours, material weight, margins), and financial ledger.">
             Aplicación nativa Android desarrollada en Kotlin y Jetpack Compose para administrar negocios y granjas de impresión 3D. Incluye base de datos relacional Room (SQLite) con control de stock de bobinas de filamento en gramos, flujo de órdenes de producción, cotizador paramétrico de costos y balance financiero.
@@ -631,14 +633,14 @@ Haz clic en un comando debajo para inspeccionar el perfil:</div>
             <span class="tag">Impresión 3D / ERP</span>
           </div>
           <div class="project-links">
-            <span class="mono" style="font-size: 12px; color: var(--amber);">★ App Completa (+1.700 líneas Kotlin)</span>
-            <a href="https://github.com/JacintoCarbone/talos-3d-print-erp" target="_blank" class="project-link mono">Ver Código en GitHub ↗</a>
+            <span class="mono" style="font-size: 12px; color: var(--amber);">[ANDROID_ERP // +1,700 LOC]</span>
+            <a href="https://github.com/JacintoCarbone/talos-3d-print-erp" target="_blank" class="project-link mono">Repositorio en GitHub -&gt;</a>
           </div>
         </div>
 
         <!-- Project 2: AVR -->
         <div class="card">
-          <div class="pill mono" style="margin-bottom: 12px;">C99 BARE-METAL • HARDWARE TIMERS • PYTHON SERIAL</div>
+          <div class="pill mono" style="margin-bottom: 12px;">C99 BARE-METAL / HARDWARE TIMERS / PYTHON SERIAL</div>
           <h3 data-es="AVR Bare-Metal Micro-OS & Telemetry Bridge" data-en="AVR Bare-Metal Micro-OS & Telemetry Bridge">AVR Bare-Metal Micro-OS & Telemetry Bridge</h3>
           <p data-es="Núcleo operativo ligero escrito en C99 puro para microcontroladores ATmega328P manipulando registros de hardware directamente (DDRB, UBRR0, TIMSK1). Incluye driver UART full-duplex con buffer circular de 64 bytes por interrupciones (USART_RX_vect), planificador de 1 ms con Timer1 CTC, intérprete CLI interactivo y script puente en Python." data-en="Lightweight operating core in pure C99 for ATmega328P using direct register manipulation. Features a 64-byte circular buffer interrupt-driven UART driver, 1ms Timer1 CTC hardware scheduler, interactive CLI parser, Wokwi simulation schematic, and Python host serial bridge.">
             Núcleo operativo ligero escrito en C99 puro para microcontroladores ATmega328P manipulando registros de hardware directamente (<code>DDRB</code>, <code>UBRR0</code>, <code>TIMSK1</code>). Incluye driver UART full-duplex con buffer circular de 64 bytes por interrupciones, planificador de 1 ms con Timer1 CTC e interfaz de monitoreo en Python.
@@ -651,14 +653,14 @@ Haz clic en un comando debajo para inspeccionar el perfil:</div>
             <span class="tag">Wokwi Simulator</span>
           </div>
           <div class="project-links">
-            <span class="mono" style="font-size: 12px; color: var(--emerald);">● Flash: ~1.3 KB | RAM: &lt;190 B</span>
-            <a href="https://github.com/JacintoCarbone/avr-baremetal-micro-os" target="_blank" class="project-link mono">Ver Código en GitHub ↗</a>
+            <span class="mono" style="font-size: 12px; color: var(--emerald);">[FLASH: ~1.3 KB // RAM: &lt;190 B]</span>
+            <a href="https://github.com/JacintoCarbone/avr-baremetal-micro-os" target="_blank" class="project-link mono">Repositorio en GitHub -&gt;</a>
           </div>
         </div>
 
         <!-- Project 3: Vision AI -->
         <div class="card">
-          <div class="pill mono" style="margin-bottom: 12px;">COMPUTER VISION • MACHINE LEARNING • PYTHON</div>
+          <div class="pill mono" style="margin-bottom: 12px;">COMPUTER VISION / MACHINE LEARNING / PYTHON</div>
           <h3 data-es="Intérprete Óptico de Fórmulas Químicas con IA" data-en="AI Camera-Based Chemical Formula Interpreter">Intérprete Óptico de Fórmulas Químicas con IA</h3>
           <p data-es="Sistema de inteligencia artificial y visión por computadora desarrollado como proyecto académico en UTEC. Captura imágenes en tiempo real a través de una cámara, preprocesa el cuadro óptico e interpreta estructuras y fórmulas químicas de forma automatizada." data-en="Artificial intelligence and computer vision system developed at UTEC. Captures real-time camera feeds, preprocesses optical frames, and automatically recognizes and interprets chemical formulas and nomenclature.">
             Sistema de inteligencia artificial y visión por computadora desarrollado como proyecto académico en UTEC. Captura imágenes en tiempo real a través de una cámara, preprocesa el cuadro óptico e interpreta estructuras y fórmulas químicas de forma automatizada.
@@ -670,14 +672,14 @@ Haz clic en un comando debajo para inspeccionar el perfil:</div>
             <span class="tag">Procesamiento de Imagen</span>
           </div>
           <div class="project-links">
-            <span class="mono" style="font-size: 12px; color: var(--amber);">★ Proyecto Destacado UTEC</span>
-            <a href="https://github.com/JacintoCarbone" target="_blank" class="project-link mono">Perfil GitHub ↗</a>
+            <span class="mono" style="font-size: 12px; color: var(--amber);">[PROYECTO I+D // UTEC]</span>
+            <a href="https://github.com/JacintoCarbone" target="_blank" class="project-link mono">Perfil GitHub -&gt;</a>
           </div>
         </div>
 
         <!-- Project 4: Python Harvester -->
         <div class="card">
-          <div class="pill mono" style="margin-bottom: 12px;">PYTHON AUTOMATION • DATA PIPELINE • CLI</div>
+          <div class="pill mono" style="margin-bottom: 12px;">PYTHON AUTOMATION / DATA PIPELINE / CLI</div>
           <h3 data-es="Enterprise Web Harvester & Data Pipeline" data-en="Enterprise Web Harvester & Data Pipeline">Enterprise Web Harvester & Data Pipeline</h3>
           <p data-es="Motor modular de extracción y monitoreo automatizado de datos en Python. Implementa cliente HTTP resiliente con reintentos Exponential Backoff ante bloqueos (429/503), rotación de cabeceras, limpieza mediante expresiones regulares y exportación automática a CSV (compatible con Excel) y JSON con resumen estadístico." data-en="Modular Python data extraction and inventory monitoring engine. Implements a resilient HTTP client with exponential backoff retries, rate-limit jitter, defensive HTML parsing, and automated export to Excel-ready CSV and JSON with analytics.">
             Motor modular de extracción y monitoreo automatizado de datos en Python. Implementa cliente HTTP resiliente con reintentos <em>Exponential Backoff</em> ante códigos 429/503, rotación de cabeceras y exportación automática a CSV y JSON con resumen estadístico en consola.
@@ -690,8 +692,8 @@ Haz clic en un comando debajo para inspeccionar el perfil:</div>
             <span class="tag">CLI</span>
           </div>
           <div class="project-links">
-            <span class="mono" style="font-size: 12px; color: var(--emerald);">● 100% Automated Pipeline</span>
-            <a href="https://github.com/JacintoCarbone/python-web-harvester" target="_blank" class="project-link mono">Ver Código en GitHub ↗</a>
+            <span class="mono" style="font-size: 12px; color: var(--emerald);">[AUTOMATED PIPELINE]</span>
+            <a href="https://github.com/JacintoCarbone/python-web-harvester" target="_blank" class="project-link mono">Repositorio en GitHub -&gt;</a>
           </div>
         </div>
 
@@ -707,9 +709,9 @@ Haz clic en un comando debajo para inspeccionar el perfil:</div>
           Disponible para posiciones Junior / Trainee en Ingeniería, Operaciones de Planta, Sistemas Embebidos y proyectos de Automatización en Uruguay (disponibilidad de traslado a Montevideo) o en modalidad remota.
         </p>
         <div class="btn-group" style="justify-content: center;">
-          <a href="mailto:jacinto.carbone@estudiantes.utec.edu.uy" class="btn btn-primary mono">✉️ jacinto.carbone@estudiantes.utec.edu.uy</a>
-          <a href="./CV_Jacinto_Carbone.pdf" target="_blank" class="btn btn-outline" data-es="📄 Descargar CV Completo" data-en="📄 Download Full CV">📄 Descargar CV Completo</a>
-          <a href="https://github.com/JacintoCarbone" target="_blank" class="btn btn-outline mono">💻 GitHub</a>
+          <a href="mailto:jacinto.carbone@estudiantes.utec.edu.uy" class="btn btn-primary mono">jacinto.carbone@estudiantes.utec.edu.uy</a>
+          <a href="./CV_Jacinto_Carbone.pdf" target="_blank" class="btn btn-outline mono" data-es="Descargar CV Completo [PDF]" data-en="Download Full CV [PDF]">Descargar CV Completo [PDF]</a>
+          <a href="https://github.com/JacintoCarbone" target="_blank" class="btn btn-outline mono">github.com/JacintoCarbone</a>
         </div>
       </div>
     </section>
@@ -717,7 +719,7 @@ Haz clic en un comando debajo para inspeccionar el perfil:</div>
 
   <footer class="mono">
     <div class="container">
-      <p>JACINTO CARBONE © 2026 — UTEC MECHATRONICS • BUILT WITH PRECISION</p>
+      <p>JACINTO CARBONE // 2026 // UTEC MECHATRONICS</p>
     </div>
   </footer>
 
