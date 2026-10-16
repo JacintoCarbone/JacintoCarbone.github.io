@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jacinto Carbone | Mecatrónica, Sistemas Embebidos & Python</title>
+  <meta name="description" content="Portafolio técnico de Jacinto Carbone — Estudiante de Mecatrónica en UTEC, Desarrollador en C (AVR), Assembly, Python, Visión Artificial y Modelado CAD 3D." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #060911;
+      --bg-card: rgba(14, 21, 38, 0.78);
+      --bg-terminal: #04070d;
+      --border-subtle: rgba(0, 240, 255, 0.16);
+      --border-hover: rgba(0, 240, 255, 0.55);
+      --cyan: #00f0ff;
+      --cyan-dim: rgba(0, 240, 255, 0.12);
+      --amber: #ffb800;
+      --emerald: #10b981;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.07) 0%, transparent 35%),
+        radial-gradient(circle at 85% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Top Telemetry Ribbon */
+    .telemetry-bar {
+      background: rgba(4, 7, 13, 0.95);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 6px 24px;
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .status-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--emerald);
+      margin-right: 6px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(6, 9, 17, 0.82);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .nav-container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: -0.5px;
+      color: var(--text-main);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-badge {
+      background: var(--cyan-dim);
+      color: var(--cyan);
+      border: 1px solid var(--border-subtle);
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
+    .lang-btn {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+      padding: 5px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .lang-btn:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 72px 0 56px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    @media (max-width: 920px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 44px 0;
+      }
+      .nav-links a {
+        display: none;
+      }
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cyan-dim);
+      border: 1px solid var(--border-subtle);
+      color: var(--cyan);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 54px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1.2px;
+      margin-bottom: 18px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #ffffff 0%, #00f0ff 60%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-p {
+      color: var(--text-muted);
+      font-size: 17px;
+      margin-bottom: 28px;
+      max-width: 580px;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--cyan);
+      color: #040811;
+      box-shadow: 0 0 24px rgba(0, 240, 255, 0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 32px rgba(0, 240, 255, 0.5);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-main);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      background: var(--cyan-dim);
+    }
+
+    /* Interactive Terminal Card */
+    .terminal-window {
+      background: var(--bg-terminal);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), 0 0 30px rgba(0, 240, 255, 0.06);
+    }
+
+    .terminal-header {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot-r { background: #ef4444; }
+    .dot-y { background: #f59e0b; }
+    .dot-g { background: #10b981; }
+
+    .terminal-body {
+      padding: 18px;
+      font-size: 12.5px;
+      height: 290px;
+      overflow-y: auto;
+      color: #cbd5e1;
+    }
+
+    .cmd-line {
+      color: var(--cyan);
+      margin-top: 8px;
+    }
+
+    .cmd-out {
+      color: #94a3b8;
+      white-space: pre-wrap;
+      margin-bottom: 8px;
+    }
+
+    .terminal-controls {
+      padding: 10px 16px;
+      background: rgba(255, 255, 255, 0.02);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .cmd-chip {
+      background: rgba(0, 240, 255, 0.08);
+      border: 1px solid var(--border-subtle);
+      color: var(--cyan);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .cmd-chip:hover {
+      background: var(--cyan);
+      color: #000;
+    }
+
+    /* Section Headings */
+    section {
+      padding: 64px 0;
+    }
+
+    .section-tag {
+      color: var(--cyan);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(26px, 3.5vw, 36px);
+      font-weight: 800;
+      margin-bottom: 36px;
+      letter-spacing: -0.6px;
+    }
+
+    /* Grid Cards */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 22px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+      gap: 24px;
+    }
+
+    @media (max-width: 600px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 28px;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 240, 255, 0.08);
+    }
+
+    .card-icon {
+      font-size: 26px;
+      margin-bottom: 14px;
+      display: inline-block;
+      background: var(--cyan-dim);
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .card h3 {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 14.5px;
+      margin-bottom: 18px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: auto;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #cbd5e1;
+      font-size: 11.5px;
+      padding: 3px 9px;
+      border-radius: 4px;
+    }
+
+    .project-links {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .project-link {
+      color: var(--cyan);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer / Contact */
+    .contact-box {
+      background: linear-gradient(135deg, rgba(14, 21, 38, 0.9), rgba(6, 9, 17, 0.95));
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 44px;
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 28px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Telemetry Bar -->
+  <div class="telemetry-bar mono">
+    <div>
+      <span class="status-dot"></span>
+      <span>SYS_STATUS: <strong>OPERATIONAL</strong></span>
+      <span style="margin: 0 10px;">|</span>
+      <span>ARCH: <strong>AVR_C99 • ASM • PYTHON_3 • CAD_3D</strong></span>
+    </div>
+    <div>
+      <span>LOC: <strong>URUGUAY (UTEC MECHATRONICS)</strong></span>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <span>JACINTO CARBONE</span>
+        <span class="brand-badge mono">MECHATRONICS // DEV</span>
+      </a>
+      <div class="nav-links">
+        <a href="#arsenal" data-es="Especialidades" data-en="Core Pillars">Especialidades</a>
+        <a href="#projects" data-es="Proyectos" data-en="Projects">Proyectos</a>
+        <a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a>
+        <a href="https://github.com/JacintoCarbone" target="_blank">GitHub ↗</a>
+        <button class="lang-btn mono" onclick="toggleLang()" id="langBtn">EN / ES</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <div class="hero">
+      <div>
+        <div class="pill mono">
+          <span>⚡</span>
+          <span data-es="DISPONIBLE PARA ROLES DE INGENIERÍA & DESARROLLO" data-en="AVAILABLE FOR ENGINEERING & DEVELOPMENT ROLES">DISPONIBLE PARA ROLES DE INGENIERÍA & DESARROLLO</span>
+        </div>
+        <h1>
+          <span data-es="Donde el " data-en="Where ">Donde el </span>
+          <span class="gradient-text" data-es="Software de Bajo Nivel" data-en="Low-Level Software">Software de Bajo Nivel</span>
+          <span data-es=" toca el Mundo Físico." data-en=" Meets Physical Hardware."> toca el Mundo Físico.</span>
+        </h1>
+        <p class="hero-p" data-es="Estudiante de Tecnología en Mecatrónica en UTEC. Integro mecánica, electricidad, modelado CAD 3D y programación en C (AVR), Assembly y Python para construir sistemas de automatización, visión artificial y soluciones de planta bajo la filosofía Just Get It Done." data-en="Mechatronics Engineering student at UTEC. Bridging mechanical systems, electrical infrastructure, 3D CAD modeling, and low-level C (AVR), Assembly & Python to build industrial automation, computer vision, and reliable hardware solutions.">
+          Estudiante de Tecnología en Mecatrónica en UTEC. Integro mecánica, electricidad, modelado CAD 3D y programación en C (AVR), Assembly y Python para construir sistemas de automatización, visión artificial y soluciones de planta bajo la filosofía <em>Just Get It Done</em>.
+        </p>
+        <div class="btn-group">
+          <a href="#projects" class="btn btn-primary" data-es="🚀 Ver Proyectos Técnicos" data-en="🚀 View Technical Projects">🚀 Ver Proyectos Técnicos</a>
+          <a href="./CV_Jacinto_Carbone.pdf" target="_blank" class="btn btn-outline" data-es="📄 Descargar CV (PDF)" data-en="📄 Download Resume (PDF)">📄 Descargar CV (PDF)</a>
+          <a href="https://github.com/JacintoCarbone" target="_blank" class="btn btn-outline mono">GitHub @JacintoCarbone</a>
+        </div>
+      </div>
+
+      <!-- Interactive AVR / Telemetry Terminal -->
+      <div class="terminal-window mono">
+        <div class="terminal-header">
+          <div class="dots">
+            <div class="dot dot-r"></div>
+            <div class="dot dot-y"></div>
+            <div class="dot dot-g"></div>
+          </div>
+          <span style="font-size: 11px; color: #94a3b8;">jacinto@avr-micro-os:~ (UART 9600 8N1)</span>
+        </div>
+        <div class="terminal-body" id="termBody">
+          <div class="cmd-out">==========================================
+  JACINTO CARBONE // TELEMETRY CONSOLE
+  UTEC Mechatronics | C/AVR • ASM • Python
+==========================================
+Haz clic en un comando debajo para inspeccionar el perfil:</div>
+          <div class="cmd-line">&gt; status</div>
+          <div class="cmd-out">[OK] Educación : Tecnología en Mecatrónica (UTEC)
+[OK] Idiomas   : Español (Nativo) | Inglés (Medio-Alto)
+[OK] Enfoque   : Automatización, Firmware, Mantenimiento & CAD</div>
+        </div>
+        <div class="terminal-controls">
+          <span style="font-size: 11px; color: #64748b; margin-right: 4px;">EXEC:</span>
+          <button class="cmd-chip mono" onclick="runCmd('status')">status</button>
+          <button class="cmd-chip mono" onclick="runCmd('stack')">stack</button>
+          <button class="cmd-chip mono" onclick="runCmd('vision')">vision-ai</button>
+          <button class="cmd-chip mono" onclick="runCmd('avr')">avr-os</button>
+          <button class="cmd-chip mono" onclick="runCmd('contact')">contact</button>
+          <button class="cmd-chip mono" onclick="runCmd('clear')">clear</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Pillars -->
+    <section id="arsenal">
+      <span class="section-tag mono" data-es="// 01. ARSENAL TÉCNICO" data-en="// 01. TECHNICAL ARSENAL">// 01. ARSENAL TÉCNICO</span>
+      <h2 class="section-title" data-es="Ingeniería Multidisciplinaria" data-en="Multidisciplinary Engineering">Ingeniería Multidisciplinaria</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">⚙️</div>
+          <h3 data-es="Mecatrónica, Planta & CAD 3D" data-en="Mechatronics, Plant & 3D CAD">Mecatrónica, Planta & CAD 3D</h3>
+          <p data-es="Sólida base en electricidad y mecánica. Lectura e interpretación de planos de infraestructura, esquemas de instalaciones eléctricas, modelado técnico 3D (STEP/STL), calibración de sensores y soporte a mantenimiento preventivo y correctivo." data-en="Solid foundation in electrical and mechanical systems. Blueprint reading, electrical schematics, 3D technical CAD modeling (STEP/STL), sensor calibration, and preventive/corrective facility maintenance.">
+            Sólida base en electricidad y mecánica. Lectura e interpretación de planos de infraestructura, esquemas de instalaciones eléctricas, modelado técnico 3D (STEP/STL), calibración de sensores y soporte a mantenimiento preventivo y correctivo.
+          </p>
+          <div class="tag-list mono">
+            <span class="tag">Mecánica & Electricidad</span>
+            <span class="tag">CAD 3D</span>
+            <span class="tag">Planos Técnicos</span>
+            <span class="tag">Sensores & Motores</span>
+            <span class="tag">EHS / Calidad</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🔌</div>
+          <h3 data-es="Sistemas Embebidos (C / AVR / ASM)" data-en="Embedded Systems (C / AVR / ASM)">Sistemas Embebidos (C / AVR / ASM)</h3>
+          <p data-es="Programación bare-metal a nivel de registros sin capas de abstracción pesadas. Desarrollo de drivers no bloqueantes mediante interrupciones (ISR), buffers circulares UART, timers de precisión por hardware y adquisición ADC." data-en="Register-level bare-metal programming without bloated abstractions. Interrupt-driven (ISR) non-blocking drivers, UART ring buffers, hardware CTC timers, and real-time sensor telemetry.">
+            Programación bare-metal a nivel de registros sin capas de abstracción pesadas. Desarrollo de drivers no bloqueantes mediante interrupciones (ISR), buffers circulares UART, timers de precisión por hardware y adquisición ADC.
+          </p>
+          <div class="tag-list mono">
+            <span class="tag">C (AVR)</span>
+            <span class="tag">Assembly</span>
+            <span class="tag">ATmega328P / Arduino</span>
+            <span class="tag">UART / I2C / SPI</span>
+            <span class="tag">PCB & Circuitos</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🐍</div>
+          <h3 data-es="Python, Automatización & Visión IA" data-en="Python, Automation & Computer Vision">Python, Automatización & Visión IA</h3>
+          <p data-es="Creación de herramientas de software para monitoreo, visión artificial por cámara para reconocimiento óptico de fórmulas químicas, pipelines de extracción de datos (Web Scraping resiliente) e interfaces de control PC-Microcontrolador." data-en="Software tooling for industrial monitoring, camera-based computer vision AI for chemical formula recognition, resilient web scraping data pipelines, and PC-to-MCU serial bridges.">
+            Creación de herramientas de software para monitoreo, visión artificial por cámara para reconocimiento óptico de fórmulas químicas, pipelines de extracción de datos (Web Scraping resiliente) e interfaces de control PC-Microcontrolador.
+          </p>
+          <div class="tag-list mono">
+            <span class="tag">Python 3</span>
+            <span class="tag">Computer Vision / IA</span>
+            <span class="tag">Automatización</span>
+            <span class="tag">Web Scraping</span>
+            <span class="tag">Git / GSuite</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section id="projects">
+      <span class="section-tag mono" data-es="// 02. PROYECTOS EN PRODUCCIÓN" data-en="// 02. FEATURED PROJECTS">// 02. PROYECTOS EN PRODUCCIÓN</span>
+      <h2 class="section-title" data-es="Proyectos de Ingeniería y Código Real" data-en="Engineering & Real-World Code">Proyectos de Ingeniería y Código Real</h2>
+      <div class="grid-2">
+
+        <!-- Project 1 -->
+        <div class="card">
+          <div class="pill mono" style="margin-bottom: 12px;">C99 BARE-METAL • HARDWARE TIMERS • PYTHON SERIAL</div>
+          <h3 data-es="AVR Bare-Metal Micro-OS & Telemetry Bridge" data-en="AVR Bare-Metal Micro-OS & Telemetry Bridge">AVR Bare-Metal Micro-OS & Telemetry Bridge</h3>
+          <p data-es="Núcleo operativo ligero escrito en C99 puro para microcontroladores ATmega328P manipulando registros de hardware directamente (DDRB, UBRR0, TIMSK1). Incluye driver UART full-duplex con buffer circular de 64 bytes por interrupciones (USART_RX_vect), planificador de 1 ms con Timer1 CTC, intérprete CLI interactivo y script puente en Python." data-en="Lightweight operating core in pure C99 for ATmega328P using direct register manipulation. Features a 64-byte circular buffer interrupt-driven UART driver, 1ms Timer1 CTC hardware scheduler, interactive CLI parser, Wokwi simulation schematic, and Python host serial bridge.">
+            Núcleo operativo ligero escrito en C99 puro para microcontroladores ATmega328P manipulando registros de hardware directamente (<code>DDRB</code>, <code>UBRR0</code>, <code>TIMSK1</code>). Incluye driver UART full-duplex con buffer circular de 64 bytes por interrupciones, planificador de 1 ms con Timer1 CTC e interfaz de monitoreo en Python.
+          </p>
+          <div class="tag-list mono">
+            <span class="tag">C99 (avr-gcc)</span>
+            <span class="tag">ISR Ring Buffers</span>
+            <span class="tag">Timer1 CTC</span>
+            <span class="tag">PySerial</span>
+            <span class="tag">Wokwi Simulator</span>
+          </div>
+          <div class="project-links">
+            <span class="mono" style="font-size: 12px; color: var(--emerald);">● Flash: ~1.3 KB | RAM: &lt;190 B</span>
+            <a href="https://github.com/JacintoCarbone/avr-baremetal-micro-os" target="_blank" class="project-link mono">Ver Código en GitHub ↗</a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="card">
+          <div class="pill mono" style="margin-bottom: 12px;">COMPUTER VISION • MACHINE LEARNING • PYTHON</div>
+          <h3 data-es="Intérprete Óptico de Fórmulas Químicas con IA" data-en="AI Camera-Based Chemical Formula Interpreter">Intérprete Óptico de Fórmulas Químicas con IA</h3>
+          <p data-es="Sistema de inteligencia artificial y visión por computadora desarrollado como proyecto académico en UTEC. Captura imágenes en tiempo real a través de una cámara, preprocesa el cuadro óptico e interpreta estructuras y fórmulas químicas de forma automatizada." data-en="Artificial intelligence and computer vision system developed at UTEC. Captures real-time camera feeds, preprocesses optical frames, and automatically recognizes and interprets chemical formulas and nomenclature.">
+            Sistema de inteligencia artificial y visión por computadora desarrollado como proyecto académico en UTEC. Captura imágenes en tiempo real a través de una cámara, preprocesa el cuadro óptico e interpreta estructuras y fórmulas químicas de forma automatizada.
+          </p>
+          <div class="tag-list mono">
+            <span class="tag">Python</span>
+            <span class="tag">Visión Artificial</span>
+            <span class="tag">Reconocimiento Óptico</span>
+            <span class="tag">Procesamiento de Imagen</span>
+          </div>
+          <div class="project-links">
+            <span class="mono" style="font-size: 12px; color: var(--amber);">★ Proyecto Destacado UTEC</span>
+            <a href="https://github.com/JacintoCarbone" target="_blank" class="project-link mono">Perfil GitHub ↗</a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="card">
+          <div class="pill mono" style="margin-bottom: 12px;">PYTHON AUTOMATION • DATA PIPELINE • CLI</div>
+          <h3 data-es="Enterprise Web Harvester & Data Pipeline" data-en="Enterprise Web Harvester & Data Pipeline">Enterprise Web Harvester & Data Pipeline</h3>
+          <p data-es="Motor modular de extracción y monitoreo automatizado de datos en Python. Implementa cliente HTTP resiliente con reintentos Exponential Backoff ante bloqueos (429/503), rotación de cabeceras, limpieza mediante expresiones regulares y exportación automática a CSV (compatible con Excel) y JSON con resumen estadístico." data-en="Modular Python data extraction and inventory monitoring engine. Implements a resilient HTTP client with exponential backoff retries, rate-limit jitter, defensive HTML parsing, and automated export to Excel-ready CSV and JSON with analytics.">
+            Motor modular de extracción y monitoreo automatizado de datos en Python. Implementa cliente HTTP resiliente con reintentos <em>Exponential Backoff</em> ante códigos 429/503, rotación de cabeceras y exportación automática a CSV y JSON con resumen estadístico en consola.
+          </p>
+          <div class="tag-list mono">
+            <span class="tag">Python 3</span>
+            <span class="tag">BeautifulSoup4</span>
+            <span class="tag">Requests</span>
+            <span class="tag">CSV / JSON Pipeline</span>
+            <span class="tag">CLI</span>
+          </div>
+          <div class="project-links">
+            <span class="mono" style="font-size: 12px; color: var(--emerald);">● 100% Automated Pipeline</span>
+            <a href="https://github.com/JacintoCarbone/python-web-harvester" target="_blank" class="project-link mono">Ver Código en GitHub ↗</a>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="card">
+          <div class="pill mono" style="margin-bottom: 12px;">CAD 3D • ELECTROMECÁNICA • HARDWARE</div>
+          <h3 data-es="Modelado Técnico 3D & Integración Electromecánica" data-en="Technical 3D CAD & Electromechanical Integration">Modelado Técnico 3D & Integración Electromecánica</h3>
+          <p data-es="Diseño de piezas mecánicas, carcasas técnicas para PCBs y soportes estructurales contemplando tolerancias reales de fabricación e impresión 3D. Integración con sensores industriales, motores paso a paso/DC y documentación de planos de planta." data-en="Design of mechanical parts, custom PCB enclosures, and structural mounts accounting for manufacturing and 3D printing tolerances. Integrated with sensors, actuators, and technical infrastructure blueprints.">
+            Diseño de piezas mecánicas, carcasas técnicas para PCBs y soportes estructurales contemplando tolerancias reales de fabricación e impresión 3D. Integración con sensores, motores y documentación de esquemas técnicos.
+          </p>
+          <div class="tag-list mono">
+            <span class="tag">Modelado CAD 3D</span>
+            <span class="tag">STEP / STL</span>
+            <span class="tag">Tolerancias Mecánicas</span>
+            <span class="tag">Instrumentación</span>
+          </div>
+          <div class="project-links">
+            <span class="mono" style="font-size: 12px; color: var(--cyan);">◆ Mecatrónica Aplicada</span>
+            <a href="./CV_Jacinto_Carbone.pdf" target="_blank" class="project-link mono">Ver Ficha en CV ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="contact-box">
+        <span class="section-tag mono">// 03. CONTACTO DIRECTO</span>
+        <h2 class="section-title" style="margin-bottom: 14px;" data-es="¿Listo para construir y resolver problemas?" data-en="Ready to Build and Solve Real Problems?">¿Listo para construir y resolver problemas?</h2>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 28px;" data-es="Disponible para posiciones Junior / Trainee en Ingeniería, Operaciones de Planta, Sistemas Embebidos y proyectos de Automatización en Uruguay (disponibilidad de traslado a Montevideo) o en modalidad remota." data-en="Available for Junior / Trainee Engineering, Plant Facilities, Embedded Systems, and Automation projects in Uruguay (ready to relocate to Montevideo) or remote worldwide.">
+          Disponible para posiciones Junior / Trainee en Ingeniería, Operaciones de Planta, Sistemas Embebidos y proyectos de Automatización en Uruguay (disponibilidad de traslado a Montevideo) o en modalidad remota.
+        </p>
+        <div class="btn-group" style="justify-content: center;">
+          <a href="mailto:jacinto.carbone@estudiantes.utec.edu.uy" class="btn btn-primary mono">✉️ jacinto.carbone@estudiantes.utec.edu.uy</a>
+          <a href="./CV_Jacinto_Carbone.pdf" target="_blank" class="btn btn-outline" data-es="📄 Descargar CV Completo" data-en="📄 Download Full CV">📄 Descargar CV Completo</a>
+          <a href="https://github.com/JacintoCarbone" target="_blank" class="btn btn-outline mono">💻 GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mono">
+    <div class="container">
+      <p>JACINTO CARBONE © 2026 — UTEC MECHATRONICS • BUILT WITH PRECISION</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentLang = 'es';
+
+    function toggleLang() {
+      currentLang = currentLang === 'es' ? 'en' : 'es';
+      document.querySelectorAll('[data-es]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+      });
+    }
+
+    const outputs = {
+      status: `[OK] Candidato  : Jacinto Carbone\n[OK] Carrera    : Tecnología en Mecatrónica (UTEC)\n[OK] Ubicación  : Fray Bentos / Montevideo, UY (Disponible traslado)\n[OK] Filosofía  : Just Get It Done | Never Stop Learning`,
+      stack: `[HARDWARE] C (AVR Bare-Metal), Assembly, Microcontroladores, Sensores, Motores\n[SOFTWARE] Python 3, Visión Artificial (IA), Web Scraping, Git, Linux\n[PLANTA]   Electricidad, Mecánica, Planos CAD 3D, Calibración, EHS`,
+      vision: `[PROJECT] Intérprete de Fórmulas Químicas con IA\n[TECH]    Python + Cámara en tiempo real + Reconocimiento Óptico\n[RESULT]  Interpretación automatizada de nomenclatura y estructuras.`,
+      avr: `[PROJECT] AVR Bare-Metal Micro-OS (ATmega328P)\n[TECH]    C99 directo a registros, UART ISR Ring Buffer (64B), Timer1 CTC 1ms\n[REPO]    https://github.com/JacintoCarbone/avr-baremetal-micro-os`,
+      contact: `[EMAIL]   jacinto.carbone@estudiantes.utec.edu.uy\n[GITHUB]  https://github.com/JacintoCarbone\n[CV PDF]  https://jacintocarbone.github.io/CV_Jacinto_Carbone.pdf`
+    };
+
+    function runCmd(cmd) {
+      const body = document.getElementById('termBody');
+      if (cmd === 'clear') {
+        body.innerHTML = '';
+        return;
+      }
+      const line = document.createElement('div');
+      line.className = 'cmd-line';
+      line.textContent = '> ' + cmd;
+      const out = document.createElement('div');
+      out.className = 'cmd-out';
+      out.textContent = outputs[cmd] || 'Command executed.';
+      body.appendChild(line);
+      body.appendChild(out);
+      body.scrollTop = body.scrollHeight;
+    }
+  </script>
+</body>
+</html>
