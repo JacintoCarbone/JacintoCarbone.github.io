@@ -7,7 +7,7 @@
 
 > *"People who are really serious about software should make their own hardware."* — **Alan Kay**  
 >
-> Estudiante de **Tecnología en Mecatrónica en UTEC (Uruguay)**. Especializado en la integración de sistemas mecánicos, diseño de PCB, modelado CAD 3D en **Autodesk Inventor** y desarrollo de software en **C (AVR Bare-Metal), Assembly, Python y Kotlin**.
+> Estudiante de **Ingeniería en Mecatrónica en UTEC (Uruguay)**. Especializado en la integración de sistemas mecánicos, diseño de PCB, modelado CAD 3D en **Autodesk Inventor** y desarrollo de software en **C (AVR Bare-Metal), Assembly, Python y Kotlin**.
 
 ---
 
